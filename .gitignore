@@ -1,0 +1,14 @@
+node_modules
+semantic/dist
+
+/tmp
+
+.DS_Store
+
+.capistrano
+/npm-debug.log
+/npm-debug.log*
+public
+
+/src/static
+webpack-manifest.json
