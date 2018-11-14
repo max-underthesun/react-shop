@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/App',
+  entry: './src/index',
+
+  mode: 'development',
 
   devServer: {
     contentBase: path.join(__dirname, 'public'),

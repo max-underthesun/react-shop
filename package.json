@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "node ./initializers/server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-react": "^7.11.1",
     "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   }
 }
