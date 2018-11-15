@@ -12,8 +12,4 @@ Price.propTypes = {
   price: PropTypes.number
 };
 
-Price.defaultProps = {
-  price: '??'
-};
-
 export default Price;
