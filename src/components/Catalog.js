@@ -4,12 +4,22 @@ import { PRODUCTS } from 'constants/Products';
 
 import ProductCard from 'components/ProductCard';
 
+const style = {
+  listStyle: 'none'
+};
+
 const Catalog = () => (
-  PRODUCTS.map(function(product) {
-    return (
-      <ProductCard {...product} key={ product.id }></ProductCard>
-    );
-  })
+  <ul style={ style }>
+    {
+      PRODUCTS.map(function(product) {
+        return (
+          <li  key={ product.title }>
+            <ProductCard {...product}></ProductCard>
+          </li>
+        );
+      })
+    }
+  </ul>
 );
 
 export default Catalog;
