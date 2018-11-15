@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextBox = ({text}) => (
+const TextBox = ({ text }) => (
   <span>
-    {text}
+    { text }
   </span>
 );
 
 TextBox.propTypes = {
-  text: PropTypes.string,
+  text: PropTypes.string
 };
 
 TextBox.defaultProps = {
-  text: '...',
+  text: '...'
 };
 
 export default TextBox;

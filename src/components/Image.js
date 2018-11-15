@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Image = ({src, width, height, alt}) => (
+const Image = ({ src, width, height, alt }) => (
   <div>
-    <img src={src} height={height} width={width} alt={alt}></img>
+    <img src={ src } height={ height } width={ width } alt={ alt }></img>
   </div>
 );
 
