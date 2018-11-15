@@ -1,13 +1,10 @@
 import React from 'react';
 
-import { PRODUCTS } from 'constants/Products';
-import ProductCard from 'components/ProductCard';
-
-const product = PRODUCTS[0];
+import Catalog from 'components/Catalog';
 
 const App = () => (
   <div>
-    <ProductCard {...product}></ProductCard>
+    <Catalog></Catalog>
   </div>
 );
 
