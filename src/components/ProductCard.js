@@ -15,7 +15,7 @@ const ProductCard = (props) => (
 
 ProductCard.propTypes = {
   imageUrl: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   price: PropTypes.number
 };
 

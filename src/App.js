@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Catalog from 'components/Catalog';
+import CatalogPage from 'containers/CatalogPage';
 
 const App = () => (
   <div>
-    <Catalog></Catalog>
+    <CatalogPage></CatalogPage>
   </div>
 );
 
