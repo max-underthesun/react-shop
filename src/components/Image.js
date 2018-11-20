@@ -15,7 +15,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
-  src: '/src/static/images/no_image.png',
+  src: '/static/images/no_image.png',
   width: '250px',
   height: '200px',
   alt: 'one more nice car'
