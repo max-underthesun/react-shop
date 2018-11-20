@@ -10,5 +10,5 @@ semantic/dist
 /npm-debug.log*
 public
 
-/src/static
+/static
 webpack-manifest.json
