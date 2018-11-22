@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { priceFormattedDollars } from 'helpers/formatters';
 
 const Price = ({ price }) => (
-  <div>
+  <div style={{ fontSize: '2em', marginBottom: '30px' }}>
     { priceFormattedDollars(price) }
   </div>
 );
