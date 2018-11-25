@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProductCard from 'components/ProductCard';
-import Cart from 'components/Cart';
+import CartButton from 'components/CartButton';
 
 const style = {
   listStyle: 'none'
@@ -10,7 +10,7 @@ const style = {
 
 const Catalog = ({ products }) => (
   <div style={{ width: '50%', marginLeft: '25%', marginRight: '25%' } }>
-    <Cart/>
+    <CartButton/>
     <ul style={ style }>
       {
         products.map(function(product) {
