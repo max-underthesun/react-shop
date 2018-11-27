@@ -34,20 +34,6 @@ const ProductCard = (product) => {
   );
 };
 
-
-// const ProductCard = ({ imageUrl, title, price }) => (
-//   <div style={ productCardStyle }>
-//     <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
-//       <Image src={ imageUrl }></Image>
-//       <TextBox text={ title }></TextBox>
-//     </div>
-//     <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
-//       <Price price={ price }></Price>
-//       <BuyButton/>
-//     </div>
-//   </div>
-// );
-
 ProductCard.propTypes = {
   imageUrl: PropTypes.string,
   title: PropTypes.string,

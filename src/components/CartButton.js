@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import contextCart from 'context/contextCart';
 
 const buttonStyle = {
@@ -24,13 +23,5 @@ const CartButton = () => (
     }
   </contextCart.Consumer>
 );
-
-CartButton.propTypes = {
-  number: PropTypes.number.isRequired
-};
-
-CartButton.defaultProps = {
-  number: 0
-};
 
 export default CartButton;
