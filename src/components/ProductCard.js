@@ -6,31 +6,37 @@ import TextBox from 'components/TextBox';
 import Price from 'components/Price';
 import BuyButton from 'components/BuyButton';
 
-const styleProductCard = {
+const productCardStyle = {
   width: 'inherit',
   border: '1px solid gray',
   margin: '2px'
 };
 
+const productCardCulumnStyle = {
+  width: '40%',
+  display: 'inline-block',
+  margin: '40px'
+};
+
 const ProductCard = (product) => {
   const { imageUrl, title, price } = product;
   return (
-    <div style={ styleProductCard }>
-      <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
+    <div style={ productCardStyle }>
+      <div style={ productCardCulumnStyle }>
         <Image src={ imageUrl }></Image>
         <TextBox text={ title }></TextBox>
       </div>
-      <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
+      <div style={ productCardCulumnStyle }>
         <Price price={ price }></Price>
         <BuyButton product={ product } />
       </div>
     </div>
   );
-}
+};
 
 
 // const ProductCard = ({ imageUrl, title, price }) => (
-//   <div style={ styleProductCard }>
+//   <div style={ productCardStyle }>
 //     <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
 //       <Image src={ imageUrl }></Image>
 //       <TextBox text={ title }></TextBox>

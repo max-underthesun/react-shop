@@ -4,18 +4,28 @@ import PropTypes from 'prop-types';
 import ProductCard from 'components/ProductCard';
 import CartButton from 'components/CartButton';
 
-const style = {
+const catalogStyle = {
+  width: '50%',
+  marginLeft: '25%',
+  marginRight: '25%'
+};
+
+const listStyle = {
   listStyle: 'none'
 };
 
+const itemStyle = {
+  width: 'inherit'
+};
+
 const Catalog = ({ products }) => (
-  <div style={{ width: '50%', marginLeft: '25%', marginRight: '25%' } }>
+  <div style={ catalogStyle }>
     <CartButton/>
-    <ul style={ style }>
+    <ul style={listStyle }>
       {
         products.map(function(product) {
           return (
-            <li key={product.title} style={{ width: 'inherit' }}>
+            <li key={product.title} style={ itemStyle }>
               <ProductCard {...product}></ProductCard>
             </li>
           );

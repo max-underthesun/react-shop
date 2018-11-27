@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import contextCart from 'context/contextCart';
+import ProductCard from 'components/ProductCard';
 
 const styleBuyButton = {
   minWidth: '60px',
@@ -56,5 +57,19 @@ class BuyButton extends React.Component {
       </contextCart.Consumer>    );
   }
 }
+
+BuyButton.propTypes = {
+  product: PropTypes.shape({
+    imageUrl: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    id: PropTypes.string.isRequired
+  })
+  // product: PropTypes.shape({
+  //   ...ProductCard.propTypes,
+  //   id: PropTypes.string.isRequired
+  // })
+};
+
 
 export default BuyButton;
