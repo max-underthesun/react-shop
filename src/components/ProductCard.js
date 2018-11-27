@@ -12,18 +12,35 @@ const styleProductCard = {
   margin: '2px'
 };
 
-const ProductCard = ({ imageUrl, title, price }) => (
-  <div style={ styleProductCard }>
-    <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
-      <Image src={ imageUrl }></Image>
-      <TextBox text={ title }></TextBox>
+const ProductCard = (product) => {
+  const { imageUrl, title, price } = product;
+  return (
+    <div style={ styleProductCard }>
+      <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
+        <Image src={ imageUrl }></Image>
+        <TextBox text={ title }></TextBox>
+      </div>
+      <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
+        <Price price={ price }></Price>
+        <BuyButton product={ product } />
+      </div>
     </div>
-    <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
-      <Price price={ price }></Price>
-      <BuyButton/>
-    </div>
-  </div>
-);
+  );
+}
+
+
+// const ProductCard = ({ imageUrl, title, price }) => (
+//   <div style={ styleProductCard }>
+//     <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
+//       <Image src={ imageUrl }></Image>
+//       <TextBox text={ title }></TextBox>
+//     </div>
+//     <div style={{ width: '40%', display: 'inline-block', margin: '40px' }}>
+//       <Price price={ price }></Price>
+//       <BuyButton/>
+//     </div>
+//   </div>
+// );
 
 ProductCard.propTypes = {
   imageUrl: PropTypes.string,
