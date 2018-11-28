@@ -14,10 +14,10 @@ const buttonContainerStyle = {
 const CartButton = () => (
   <contextCart.Consumer>
     {
-      ({ products }) => (
+      ({ cart }) => (
         <div style={ buttonContainerStyle }>
           <button style={ buttonStyle }>
-            Cart: { products.length }
+            Cart: {cart.length }
           </button>
         </div>
       )

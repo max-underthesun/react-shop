@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 
+// ??????
 const contextCart = createContext({
-  products: []
+  cart: []
 });
 
 export default contextCart;

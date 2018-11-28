@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import contextCart from 'context/contextCart';
-import ProductCard from 'components/ProductCard';
+// import ProductCard from 'components/ProductCard';
 
 const styleBuyButton = {
   minWidth: '60px',
@@ -22,41 +22,53 @@ const styleBuyButton = {
 //   </contextCart.Consumer>
 // );
 
-class BuyButton extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.addProduct = this.addProduct.bind(this);
-  }
+const BuyButton = ({ product }) => (
+  <contextCart.Consumer>
+    {
+      ({ addProduct }) => (
+        <button onClick={ () => addProduct(product) } style={ styleBuyButton }>
+          Add to Cart
+        </button>
+      )
+    }
+  </contextCart.Consumer>
+);
 
-  // addProduct(products, product) {
-  //   // let products = this.state.cart.products;
-  //   // this.setState({ cart: { products: products.push(PRODUCTS[this.product])}})
-  //   // console.log(products);
-  //   // console.log(product);
+// class BuyButton extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     // this.addProduct = this.addProduct.bind(this);
+//   }
 
-  //   products.push(product);
-  // }
+//   // addProduct(products, product) {
+//   //   // let products = this.state.cart.products;
+//   //   // this.setState({ cart: { products: products.push(PRODUCTS[this.product])}})
+//   //   // console.log(products);
+//   //   // console.log(product);
 
-  render() {
-    // console.log(this.props);
+//   //   products.push(product);
+//   // }
 
-    const { product } = this.props;
+//   render() {
+//     // console.log(this.props);
 
-    return (
-      <contextCart.Consumer>
-        {
-          ({ addProduct }) => (
-            // <button onClick={() => console.log(products)} style={styleBuyButton}>
-            // <button onClick={ () => products.push(product) } style={ styleBuyButton }>
-            // <button onClick={ () => this.addProduct(products, product) } style={ styleBuyButton }>
-            <button onClick={ () => addProduct(product) } style={ styleBuyButton }>
-              Add to Cart {product.id + '**' + product.title}
-            </button>
-          )
-        }
-      </contextCart.Consumer>    );
-  }
-}
+//     const { product } = this.props;
+
+//     return (
+//       <contextCart.Consumer>
+//         {
+//           ({ addProduct }) => (
+//             // <button onClick={() => console.log(products)} style={styleBuyButton}>
+//             // <button onClick={ () => products.push(product) } style={ styleBuyButton }>
+//             // <button onClick={ () => this.addProduct(products, product) } style={ styleBuyButton }>
+//             <button onClick={ () => addProduct(product) } style={ styleBuyButton }>
+//               Add to Cart {product.id + '**' + product.title}
+//             </button>
+//           )
+//         }
+//       </contextCart.Consumer>    );
+//   }
+// }
 
 BuyButton.propTypes = {
   product: PropTypes.shape({
