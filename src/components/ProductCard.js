@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'components/Image';
 import TextBox from 'components/TextBox';
 import Price from 'components/Price';
-import BuyButton from 'components/BuyButton';
+import BuyFormContainer from 'containers/BuyFormContainer';
 
 const productCardStyle = {
   width: 'inherit',
@@ -28,7 +28,7 @@ const ProductCard = (product) => {
       </div>
       <div style={ productCardCulumnStyle }>
         <Price price={ price }></Price>
-        <BuyButton product={ product } />
+        <BuyFormContainer product={ product } />
       </div>
     </div>
   );

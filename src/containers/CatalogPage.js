@@ -1,7 +1,5 @@
 import React from 'react';
-
-import update from 'immutability-helper';
-
+// import update from 'immutability-helper';
 
 import { PRODUCTS } from 'constants/Products';
 import Catalog from 'components/Catalog';
@@ -26,8 +24,8 @@ class CatalogPage extends React.Component {
   }
 
   addProduct(product) {
-    this.setState(update(this.state, { cart: { $push: [product] } }));
-    // this.setState((state) => ({ cart: [...state.cart, product] }));
+    // this.setState(update(this.state, { cart: { $push: [product] } }));
+    this.setState((state) => ({ cart: [...state.cart, product] }));
   }
 
   render() {
