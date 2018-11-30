@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import BuyField from '../components/BuyField';
 import BuyButton from 'components/BuyButton';
 
-const BuyForm = ({ addProducts, disabled, getInput }) => (
+const BuyForm = ({ addProducts, disabled, getInput, inputValue }) => (
   <div>
-    <BuyField getInput={getInput} />
+    <BuyField getInput={getInput} value={inputValue} />
     <BuyButton addProducts={addProducts} disabled={disabled} />
   </div>
 );
@@ -14,6 +14,7 @@ const BuyForm = ({ addProducts, disabled, getInput }) => (
 BuyForm.propTypes = {
   addProducts: PropTypes.func,
   getInput: PropTypes.func,
+  inputValue: PropTypes.number,
   disabled: PropTypes.bool
 };
 

@@ -6,12 +6,17 @@ const styleBuyButton = {
   minHeight: '25px'
 };
 
-const BuyField = ({ getInput }) => (
-  <input onChange={(e) => getInput(e.target.value)} style={styleBuyButton} />
+const BuyField = ({ getInput, value }) => (
+  <input
+    onChange={(e) => getInput(e.target.value)}
+    style={styleBuyButton}
+    value={value}
+  />
 );
 
 BuyField.propTypes = {
-  getInput: PropTypes.func
+  getInput: PropTypes.func,
+  value: PropTypes.number
 };
 
 export default BuyField;

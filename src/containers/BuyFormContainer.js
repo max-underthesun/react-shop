@@ -28,6 +28,7 @@ class BuyFormContainer extends React.Component {
     for (let i = 1; i <= this.state.number; i++) {
       addProduct(this.props.product);
     }
+    this.setState({ number: 0, disabled: true });
   }
 
   render() {
@@ -39,6 +40,7 @@ class BuyFormContainer extends React.Component {
               addProducts={() => this.addProducts(addProduct) }
               disabled={this.state.disabled}
               getInput={this.getInput}
+              inputValue={this.state.number}
             />
           )
         }
