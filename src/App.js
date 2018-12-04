@@ -1,11 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import CatalogPageContainer from 'containers/CatalogPageContainer';
+import routes from 'routes';
+
+
+const RouteWithSubroutes = (route, key) => (
+  React.createElement(Route, { ...route, key })
+);
 
 const App = () => (
-  <div>
-    <CatalogPageContainer />
-  </div>
+  <Router>
+    <div>
+      <Switch>
+        {routes.map((route, key) => (RouteWithSubroutes(route, key)))}
+      </Switch>
+    </div>
+  </Router>
 );
 
 export default App;
