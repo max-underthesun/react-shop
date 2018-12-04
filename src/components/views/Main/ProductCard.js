@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Image from 'components/Image';
-import TextBox from 'components/TextBox';
-import Price from 'components/Price';
+import Image from 'components/shared/elements/Image';
+import TextBox from 'components/shared/elements/TextBox';
+import Price from './elements/Price';
 import BuyFormContainer from 'containers/BuyFormContainer';
 
 const productCardStyle = {

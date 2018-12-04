@@ -1,11 +1,10 @@
 import React from 'react';
-// import update from 'immutability-helper';
 
 import { PRODUCTS } from 'constants/Products';
-import Catalog from 'components/Catalog';
+import Catalog from 'components/views/Main';
 import contextCart from 'context/contextCart';
 
-class CatalogPage extends React.Component {
+class CatalogPageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +23,6 @@ class CatalogPage extends React.Component {
   }
 
   addProduct(product) {
-    // this.setState(update(this.state, { cart: { $push: [product] } }));
     this.setState((state) => ({ cart: [...state.cart, product] }));
   }
 
@@ -38,5 +36,5 @@ class CatalogPage extends React.Component {
   }
 }
 
-export default CatalogPage;
+export default CatalogPageContainer;
 

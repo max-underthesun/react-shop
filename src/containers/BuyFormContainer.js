@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import contextCart from 'context/contextCart';
-import BuyForm from 'components/BuyForm';
+import BuyForm from 'components/shared/widgets/BuyForm';
 
 class BuyFormContainer extends React.Component {
   constructor(props) {

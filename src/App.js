@@ -1,10 +1,10 @@
 import React from 'react';
 
-import CatalogPage from 'containers/CatalogPage';
+import CatalogPageContainer from 'containers/CatalogPageContainer';
 
 const App = () => (
   <div>
-    <CatalogPage></CatalogPage>
+    <CatalogPageContainer />
   </div>
 );
 

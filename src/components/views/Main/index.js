@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ProductCard from 'components/ProductCard';
-import CartButton from 'components/CartButton';
+import ProductCard from './ProductCard';
+import CartButton from 'components/shared/elements/CartButton';
 
 const catalogStyle = {
   width: '50%',
