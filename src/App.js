@@ -41,11 +41,12 @@ class AppPageContainer extends React.Component {
       <contextCart.Provider value={{ cart, addProduct: this.addProduct }}>
         {/* <Catalog products={products} /> */}
         <Router>
-          <div style={{ backgroundColor: '#bbb' }}>
+          <div>
             <ul>
               <li><NavLink exact to={mainPath()}>Main</NavLink></li>
               <li><NavLink to={productPath(1)}>Product #1</NavLink></li>
               <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
+              <li><NavLink to={'/kuku'}>404</NavLink></li>
             </ul>
             <Switch>
               {routes.map((route, key) => RouteWithSubroutes(route, key))}
