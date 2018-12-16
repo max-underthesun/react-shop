@@ -1,6 +1,8 @@
 import React from 'react';
 import contextCart from 'context/contextCart';
 
+import ProductCard from 'components/views/Main/ProductCard';
+
 // const Cart = () => (
 //   <div>Cart</div>
 // );
@@ -27,9 +29,9 @@ const Cart = () => (
           <h1>Cart</h1>
           <ul style={listStyle}>
             {
-              cart.map(function (product) {
+              cart.map(function (product, index) {
                 return (
-                  <li key={product.title} style={itemStyle}>
+                  <li key={index} style={itemStyle}>
                     <ProductCard {...product}></ProductCard>
                   </li>
                 );

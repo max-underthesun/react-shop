@@ -2,16 +2,17 @@ import React from 'react';
 
 import { PRODUCTS } from 'constants/Products';
 import Catalog from 'components/views/Main';
-import contextCart from 'context/contextCart';
+// import contextCart from 'context/contextCart';
 
 class CatalogPageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
-      cart: []
+      products: []
+      // ,
+      // cart: []
     };
-    this.addProduct = this.addProduct.bind(this);
+    // this.addProduct = this.addProduct.bind(this);
   }
 
   componentDidMount() {
@@ -22,16 +23,18 @@ class CatalogPageContainer extends React.Component {
     this.setState({ products: PRODUCTS });
   }
 
-  addProduct(product) {
-    this.setState((state) => ({ cart: [...state.cart, product] }));
-  }
+  // addProduct(product) {
+  //   this.setState((state) => ({ cart: [...state.cart, product] }));
+  // }
 
   render() {
-    const { products, cart } = this.state;
+    // const { products, cart } = this.state;
+    const { products } = this.state;
     return (
-      <contextCart.Provider value={{ cart, addProduct: this.addProduct } }>
-        <Catalog products={ products } />
-      </contextCart.Provider>
+      // <contextCart.Provider value={{ cart, addProduct: this.addProduct } }>
+      //   <Catalog products={ products } />
+      // </contextCart.Provider>
+      <Catalog products={ products } />
     );
   }
 }
