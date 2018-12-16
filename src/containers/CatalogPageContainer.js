@@ -37,4 +37,3 @@ class CatalogPageContainer extends React.Component {
 }
 
 export default CatalogPageContainer;
-

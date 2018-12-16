@@ -58,6 +58,4 @@ BuyFormContainer.propTypes = {
   })
 };
 
-
 export default BuyFormContainer;
-
