@@ -3,10 +3,6 @@ import contextCart from 'context/contextCart';
 
 import ProductCard from 'components/views/Main/ProductCard';
 
-// const Cart = () => (
-//   <div>Cart</div>
-// );
-
 const catalogStyle = {
   width: '50%',
   marginLeft: '25%',
