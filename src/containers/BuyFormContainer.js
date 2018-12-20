@@ -54,7 +54,7 @@ BuyFormContainer.propTypes = {
     imageUrl: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    id: PropTypes.string.isRequired
+    id: PropTypes.string
   })
 };
 

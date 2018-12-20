@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProductCard from 'components/views/Main/ProductCard';
+import ProductCard from 'components/shared/widgets/ProductCard';
 import CartButton from 'components/shared/elements/CartButton';
 
 const catalogStyle = {

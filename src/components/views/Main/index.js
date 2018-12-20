@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ProductCard from './ProductCard';
+import ProductCard from 'components/shared/widgets/ProductCard';
 import CartButton from 'components/shared/elements/CartButton';
 
 const catalogStyle = {

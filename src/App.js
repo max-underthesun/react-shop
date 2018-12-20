@@ -4,7 +4,8 @@ import {
 } from 'react-router-dom';
 
 import routes from 'routes';
-import { mainPath, contactsPath, productPath } from 'helpers/routes';
+// import { mainPath, contactsPath, productPath } from 'helpers/routes';
+import { mainPath, contactsPath } from 'helpers/routes';
 import contextCart from 'context/contextCart';
 
 const RouteWithSubroutes = (route, key) => (
@@ -32,9 +33,9 @@ class AppPageContainer extends React.Component {
           <div>
             <ul>
               <li><NavLink exact to={mainPath()}>Main</NavLink></li>
-              <li><NavLink to={productPath(1)}>Product #1</NavLink></li>
+              {/* <li><NavLink to={productPath(1)}>Product #1</NavLink></li> */}
               <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
-              <li><NavLink to={'/kuku'}>404</NavLink></li>
+              {/* <li><NavLink to={'/kuku'}>404</NavLink></li> */}
             </ul>
             <Switch>
               {routes.map((route, key) => RouteWithSubroutes(route, key))}

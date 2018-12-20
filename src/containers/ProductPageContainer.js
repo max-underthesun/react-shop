@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { PRODUCTS } from 'constants/Products';
 import Product from 'components/views/Product';
@@ -27,5 +28,10 @@ class ProductPageContainer extends React.Component {
     );
   }
 }
+
+ProductPageContainer.propTypes = {
+  id: PropTypes.string.isRequired
+};
+
 
 export default ProductPageContainer;

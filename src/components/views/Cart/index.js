@@ -1,7 +1,7 @@
 import React from 'react';
 import contextCart from 'context/contextCart';
 
-import ProductCard from 'components/views/Main/ProductCard';
+import ProductCard from 'components/shared/widgets/ProductCard';
 
 const catalogStyle = {
   width: '50%',
