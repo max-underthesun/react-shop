@@ -28,7 +28,6 @@ const ProductCard = (product) => {
         <Link exact='true' to={productPath(id)}>
           <Image src={imageUrl} />
         </Link>
-        {/* <Image src={ imageUrl }></Image> */}
         <TextBox text={ title }></TextBox>
       </div>
       <div style={ productCardColumnStyle }>
