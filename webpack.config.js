@@ -6,7 +6,11 @@ module.exports = {
   mode: 'development',
 
   devServer: {
-    contentBase: path.join(__dirname, '/'),
+    contentBase: path.join(__dirname, 'public'),
+    // contentBase: [
+    //   path.join(__dirname, 'public'),
+    //   path.join(__dirname, 'static')
+    // ],
     compress: true,
     port: 9000,
     historyApiFallback: true
@@ -31,7 +35,7 @@ module.exports = {
   resolve: {
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'src')
     ]
   }
 };
