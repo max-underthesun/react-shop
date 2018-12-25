@@ -26,7 +26,6 @@ class CartContainer extends React.Component {
   }
 }
 
-
 CartContainer.propTypes = {
   children: PropTypes.node
 };
