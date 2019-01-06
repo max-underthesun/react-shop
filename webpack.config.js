@@ -1,14 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index',
+  entry: './src/index.js',
 
   mode: 'development',
 
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   },
 
   output: {
@@ -30,7 +31,7 @@ module.exports = {
   resolve: {
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'src')
     ]
   }
 };

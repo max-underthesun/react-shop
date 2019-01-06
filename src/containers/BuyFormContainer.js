@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import contextCart from 'context/contextCart';
-import BuyForm from 'components/BuyForm';
+import BuyForm from 'components/shared/widgets/BuyForm';
 
 class BuyFormContainer extends React.Component {
   constructor(props) {
@@ -54,10 +54,8 @@ BuyFormContainer.propTypes = {
     imageUrl: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    id: PropTypes.string.isRequired
+    id: PropTypes.string
   })
 };
 
-
 export default BuyFormContainer;
-

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BuyField from '../components/BuyField';
-import BuyButton from 'components/BuyButton';
+import BuyField from './BuyField';
+import BuyButton from './BuyButton';
 
 const BuyForm = ({ addProducts, disabled, getInput, inputValue }) => (
   <div>
