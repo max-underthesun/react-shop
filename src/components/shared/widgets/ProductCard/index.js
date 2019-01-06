@@ -15,22 +15,28 @@ const productCardStyle = {
 };
 
 const productCardColumnStyle = {
-  width: '40%',
+  width: '50%',
+  display: 'inline-block',
+  margin: '40px'
+};
+
+const productCardColumnStyle1 = {
+  width: '30%',
   display: 'inline-block',
   margin: '40px'
 };
 
 const ProductCard = (product) => {
-  const { imageUrl, title, price, id } = product;
+  const { images, title, price, id } = product;
   return (
     <div style={ productCardStyle }>
       <div style={ productCardColumnStyle }>
         <Link exact='true' to={productPath(id)}>
-          <Image src={imageUrl} />
+          <Image src={images[0]} />
         </Link>
         <TextBox text={ title }></TextBox>
       </div>
-      <div style={ productCardColumnStyle }>
+      <div style={productCardColumnStyle1 }>
         <Price price={ price }></Price>
         <BuyFormContainer product={ product } />
       </div>
