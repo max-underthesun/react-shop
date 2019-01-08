@@ -8,7 +8,6 @@ semantic/dist
 .capistrano
 /npm-debug.log
 /npm-debug.log*
-public/images
 
 /static
 webpack-manifest.json

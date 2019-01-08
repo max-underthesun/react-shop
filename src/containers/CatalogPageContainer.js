@@ -1,7 +1,6 @@
 import React from 'react';
 import request from 'superagent';
 
-import { PRODUCTS } from 'constants/Products';
 import Catalog from 'components/views/Main';
 
 class CatalogPageContainer extends React.Component {
@@ -17,11 +16,9 @@ class CatalogPageContainer extends React.Component {
   }
 
   fetchProducts() {
-    // this.setState({ products: PRODUCTS });
     request
       .get('http://localhost:3333/products')
       .then((res) => this.setState({ products: res.body }));
-      // .then((res) => console.log(res.body));
   }
 
   render() {

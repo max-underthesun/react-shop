@@ -21,7 +21,7 @@ const CartButton = () => (
       ({ cart }) => (
         <div style={ buttonContainerStyle }>
           <button style={buttonStyle}>
-            <Link exact='true' to={cartPath()}>Cart: {cart.length}</Link>
+            <Link exact='true' to={ cartPath() }>Cart: {cart.length}</Link>
           </button>
         </div>
       )

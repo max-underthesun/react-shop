@@ -1,10 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import ProductCard from 'components/shared/widgets/ProductCard';
 import CartButton from 'components/shared/elements/CartButton';
-import { productPath } from 'helpers/routes';
-
 import Image from 'components/shared/elements/Image';
 import TextBox from 'components/shared/elements/TextBox';
 import Price from 'components/shared/widgets/ProductCard/elements/Price';
@@ -37,7 +34,9 @@ const productCardColumnStyle = {
   margin: '40px'
 };
 
-const Product = ({ product, image, onClick }) => (
+const galleryStyle = { display: 'inline-block', marginRight: '5px' };
+
+const Product = ({ product, imageIndex, onClick }) => (
   <div style={catalogStyle}>
     <CartButton />
     <ul style={listStyle}>
@@ -45,17 +44,34 @@ const Product = ({ product, image, onClick }) => (
         <div style={productCardStyle}>
           <div style={productCardColumnStyle}>
             <TextBox text={product.title}></TextBox>
-            {/* <Link exact='true' to={productPath(product.id)}>
-            </Link> */}
-            <Image src={product.images && product.images[image]} width={'640px'} height={'480px'} />
-            <Image src={product.images && product.images[0]} width={'80px'} height={'60px'} onClick={ () => onClick(0) } />
-            <Image src={product.images && product.images[1]} width={'80px'} height={'60px'} onClick={() => onClick(1) } />
-            <Image src={product.images && product.images[2]} width={'80px'} height={'60px'} onClick={() => onClick(2) } />
-            <Image src={product.images && product.images[3]} width={'80px'} height={'60px'} onClick={() => onClick(3) } />
+            <Image
+              src={product.images && product.images[imageIndex]}
+              width={'640px'}
+              height={'480px'}
+            />
+            <div>
+              {
+                product.images && product.images.map((imageUrl, index) => (
+                  <Image
+                    src={imageUrl}
+                    width={'80px'}
+                    height={'60px'}
+                    onClick={() => onClick(index)}
+                    key={index}
+                    style={galleryStyle}
+                  />
+                ))
+              }
+            </div>
           </div>
           <div style={productCardColumnStyle}>
             <Price price={product.price}></Price>
-            <BuyFormContainer product={product} />
+            <BuyFormContainer
+              product={{
+                ...product,
+                image: product.images && product.images[0]
+              }}
+            />
           </div>
         </div>
 
@@ -63,5 +79,16 @@ const Product = ({ product, image, onClick }) => (
     </ul>
   </div>
 );
+
+Product.propTypes = {
+  product: PropTypes.shape({
+    images: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string,
+    price: PropTypes.string,
+    id: PropTypes.number
+  }),
+  imageIndex: PropTypes.number,
+  onClick: PropTypes.func
+};
 
 export default Product;

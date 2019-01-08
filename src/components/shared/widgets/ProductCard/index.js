@@ -26,28 +26,36 @@ const productCardColumnStyle1 = {
   margin: '40px'
 };
 
-const ProductCard = (product) => {
-  const { images, title, price, id } = product;
-  return (
-    <div style={ productCardStyle }>
-      <div style={ productCardColumnStyle }>
-        <Link exact='true' to={productPath(id)}>
-          <Image src={images[0]} />
-        </Link>
-        <TextBox text={ title }></TextBox>
-      </div>
-      <div style={productCardColumnStyle1 }>
-        <Price price={ price }></Price>
-        <BuyFormContainer product={ product } />
-      </div>
+const ProductCard = ({ image, title, price, id, displayBuyForm }) => (
+  <div style={ productCardStyle }>
+    <div style={ productCardColumnStyle }>
+      <Link exact='true' to={productPath(id)}>
+        <Image src={ image } />
+      </Link>
+      <TextBox text={ title } />
     </div>
-  );
-};
+    <div style={productCardColumnStyle1 }>
+      <Price price={ price } />
+      {
+        displayBuyForm &&
+          <BuyFormContainer
+            product={{ image, title, price, id, displayBuyForm }}
+          />
+      }
+    </div>
+  </div>
+);
 
 ProductCard.propTypes = {
-  imageUrl: PropTypes.string,
+  image: PropTypes.string,
   title: PropTypes.string,
-  price: PropTypes.number
+  price: PropTypes.string,
+  id: PropTypes.number,
+  displayBuyForm: PropTypes.bool
+};
+
+ProductCard.defaultProps = {
+  displayBuyForm: true
 };
 
 export default ProductCard;

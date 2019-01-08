@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import request from 'superagent';
 
-import { PRODUCTS } from 'constants/Products';
 import Product from 'components/views/Product';
 
 class ProductPageContainer extends React.Component {
@@ -11,7 +10,7 @@ class ProductPageContainer extends React.Component {
 
     this.state = {
       product: {},
-      image: 0
+      imageIndex: 0
     };
 
     this.chooseImage = this.chooseImage.bind(this);
@@ -22,24 +21,23 @@ class ProductPageContainer extends React.Component {
   }
 
   fetchProduct(id) {
-    // this.setState({ product: PRODUCTS.find((product) => (product.id == id)) });
-    // this.setState({ products: PRODUCTS });
     request
       .get(`http://localhost:3333/products/${id}`)
       .then((res) => this.setState({ product: res.body }));
-      // .then((res) => console.log(res.body));
   }
 
   chooseImage(index) {
-    // console.log(index);
-    this.setState({ image: index });
-
+    this.setState({ imageIndex: index });
   }
 
   render() {
-    const { product, image } = this.state;
+    const { product, imageIndex } = this.state;
     return (
-      <Product product={ product } image={ image } onClick={ this.chooseImage } />
+      <Product
+        product={product}
+        imageIndex={ imageIndex }
+        onClick={ this.chooseImage }
+      />
     );
   }
 }

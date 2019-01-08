@@ -20,7 +20,7 @@ const App = () => (
           <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
         </ul>
         <Switch>
-          {routes.map((route, key) => RouteWithSubroutes(route, key))}
+          { routes.map((route, key) => RouteWithSubroutes(route, key)) }
         </Switch>
       </div>
     </Router>
