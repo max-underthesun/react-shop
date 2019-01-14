@@ -2,6 +2,8 @@ import React from 'react';
 import request from 'superagent';
 
 import Catalog from 'components/views/Main';
+import { SERVER_URL } from 'constants/ServerUrl';
+
 
 class CatalogPageContainer extends React.Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class CatalogPageContainer extends React.Component {
 
   fetchProducts() {
     request
-      .get('http://localhost:3333/products')
+      .get(`${SERVER_URL}/products`)
       .then((res) => this.setState({ products: res.body }));
   }
 

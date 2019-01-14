@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import request from 'superagent';
 
 import Product from 'components/views/Product';
+import { SERVER_URL } from 'constants/ServerUrl';
 
 class ProductPageContainer extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ProductPageContainer extends React.Component {
 
   fetchProduct(id) {
     request
-      .get(`http://localhost:3333/products/${id}`)
+      .get(`${SERVER_URL}/products/${id}`)
       .then((res) => this.setState({ product: res.body }));
   }
 
