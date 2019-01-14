@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import request from 'superagent';
 
-import { PRODUCTS } from 'constants/Products';
 import Product from 'components/views/Product';
+import { SERVER_URL } from 'constants/ServerUrl';
 
 class ProductPageContainer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      product: {}
+      product: {},
+      imageIndex: 0
     };
+
+    this.chooseImage = this.chooseImage.bind(this);
   }
 
   componentDidMount() {
@@ -18,13 +22,23 @@ class ProductPageContainer extends React.Component {
   }
 
   fetchProduct(id) {
-    this.setState({ product: PRODUCTS.find((product) => (product.id == id)) });
+    request
+      .get(`${SERVER_URL}/products/${id}`)
+      .then((res) => this.setState({ product: res.body }));
+  }
+
+  chooseImage(index) {
+    this.setState({ imageIndex: index });
   }
 
   render() {
-    const { product } = this.state;
+    const { product, imageIndex } = this.state;
     return (
-      <Product product={product} />
+      <Product
+        product={product}
+        imageIndex={ imageIndex }
+        onClick={ this.chooseImage }
+      />
     );
   }
 }

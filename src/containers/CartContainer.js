@@ -20,7 +20,7 @@ class CartContainer extends React.Component {
     const { cart } = this.state;
     return (
       <contextCart.Provider value={{ cart, addProduct: this.addProduct }}>
-        {this.props.children}
+        { this.props.children }
       </contextCart.Provider>
     );
   }

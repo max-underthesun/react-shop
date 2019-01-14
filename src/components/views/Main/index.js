@@ -39,7 +39,7 @@ Catalog.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       ...ProductCard.propTypes,
-      id: PropTypes.string.isRequired
+      id: PropTypes.number.isRequired
     })
   ).isRequired
 };

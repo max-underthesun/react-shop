@@ -15,33 +15,47 @@ const productCardStyle = {
 };
 
 const productCardColumnStyle = {
-  width: '40%',
+  width: '50%',
   display: 'inline-block',
   margin: '40px'
 };
 
-const ProductCard = (product) => {
-  const { imageUrl, title, price, id } = product;
-  return (
-    <div style={ productCardStyle }>
-      <div style={ productCardColumnStyle }>
-        <Link exact='true' to={productPath(id)}>
-          <Image src={imageUrl} />
-        </Link>
-        <TextBox text={ title }></TextBox>
-      </div>
-      <div style={ productCardColumnStyle }>
-        <Price price={ price }></Price>
-        <BuyFormContainer product={ product } />
-      </div>
-    </div>
-  );
+const productCardColumnStyle1 = {
+  width: '30%',
+  display: 'inline-block',
+  margin: '40px'
 };
 
+const ProductCard = ({ image, title, price, id, displayBuyForm }) => (
+  <div style={ productCardStyle }>
+    <div style={ productCardColumnStyle }>
+      <Link exact='true' to={productPath(id)}>
+        <Image src={ image } />
+      </Link>
+      <TextBox text={ title } />
+    </div>
+    <div style={productCardColumnStyle1 }>
+      <Price price={ price } />
+      {
+        displayBuyForm &&
+          <BuyFormContainer
+            product={{ image, title, price, id, displayBuyForm }}
+          />
+      }
+    </div>
+  </div>
+);
+
 ProductCard.propTypes = {
-  imageUrl: PropTypes.string,
+  image: PropTypes.string,
   title: PropTypes.string,
-  price: PropTypes.number
+  price: PropTypes.string,
+  id: PropTypes.number,
+  displayBuyForm: PropTypes.bool
+};
+
+ProductCard.defaultProps = {
+  displayBuyForm: true
 };
 
 export default ProductCard;

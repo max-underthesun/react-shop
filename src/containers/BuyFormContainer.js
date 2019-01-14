@@ -53,8 +53,8 @@ BuyFormContainer.propTypes = {
   product: PropTypes.shape({
     imageUrl: PropTypes.string,
     title: PropTypes.string,
-    price: PropTypes.number,
-    id: PropTypes.string
+    price: PropTypes.string,
+    id: PropTypes.number
   })
 };
 

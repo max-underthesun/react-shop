@@ -25,13 +25,11 @@ const Cart = () => (
           <h1>Cart</h1>
           <ul style={listStyle}>
             {
-              cart.map(function (product, index) {
-                return (
-                  <li key={index} style={itemStyle}>
-                    <ProductCard {...product}></ProductCard>
-                  </li>
-                );
-              })
+              cart.map((product, index) =>
+                <li key={index} style={itemStyle}>
+                  <ProductCard {...product} displayBuyForm={ false } />
+                </li>
+              )
             }
           </ul>
         </div>
